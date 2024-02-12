@@ -1,0 +1,66 @@
+# Be wary of including this file in version control after filling out the relevant fields.
+# This file could give someone FULL access to your site backend as well as your database instance
+
+version: '3'
+services:
+  directus:
+    image: directus/directus:latest
+    # Don't touch the second value after colon
+    # Change 0000 to the port nginx points to
+    ports:
+      - "0000:8055"
+    restart: unless-stopped
+    volumes:
+      # keys options is only if file storage options are configured
+      - <cms-folder-absolute>/keys:/directus/keys
+      - <cms-folder-absolute>/uploads:/directus/uploads #Don't touch after colon unless you know what you're doing
+      - <cms-folder-absolute>/extensions:/directus/extensions
+    environment:
+      KEY: '<long random string -- IMPORTANT>'
+      SECRET: '<long random string -- IMPORTANT>'
+
+      # Only enable if you're using a subdirectory for the cms, eg. site.com/cms.
+      # Set to the full site url of the cms: https://site.com/cms, and make sure nginx redirect matches
+      # PUBLIC_URL: https://site.com/cms
+
+      # file storage options, leave blank to store in volumes: /uploads
+      STORAGE_LOCATIONS: gcs, local
+
+      STORAGE_LOCAL_ROOT: ./uploads
+
+      # gcs options for file storage
+      # check https://docs.directus.io/self-hosted/config-options.html#file-storage for other options
+      STORAGE_GCS_DRIVER: gcs
+      STORAGE_GCS_KEY_FILENAME: ./keys/example-key.json
+      STORAGE_GCS_BUCKET: <storage bucket name>
+      STORAGE_GCS_ROOT: ./uploads
+      STORAGE_GCS_HEALTHCHECK_THRESHOLD: 750
+
+      EXTENSIONS_AUTO_RELOAD: true
+      EXTENSIONS_FOLDER: ./extensions
+
+      # email options, remove if you're not having directus send any emails
+      EMAIL_VERIFY_SETUP: true
+      EMAIL_FROM: <Email address to send from, normally noreply@...>
+      # check https://docs.directus.io/self-hosted/config-options.html#email for other options
+      EMAIL_TRANSPORT: sendgrid
+      EMAIL_SENDGRID_API_KEY: <sendgrid api key>
+
+      # cache options, remove for no caching
+      CACHE_ENABLED: true
+      CACHE_AUTO_PURGE: true
+      CACHE_TTL: '1 day'
+      CORS_ENABLED: true
+      CORS_ORIGIN: true
+
+      # Database options, can use local or remote
+      DB_CLIENT: 'pg' # service name: pg, mysql, etc.
+      DB_HOST: '<DB host>'
+      DB_PORT: '<DB Port>'
+      DB_DATABASE: '<DB Name>'
+      DB_USER: '<DB Username>'
+      DB_PASSWORD: '<DB Password>'
+
+      # login credentials for the directus admin app
+      ADMIN_EMAIL: '<email for admin app login -- IMPORTANT>'
+      ADMIN_PASSWORD: '<password for admin app login --IMPORTANT>'

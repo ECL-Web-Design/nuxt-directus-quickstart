@@ -1,0 +1,64 @@
+:root {
+    --text-color: var(--fg-color) !important;
+    --text-color-secondary: var(--text-less-subtle) !important;
+    --highlight-bg: var(--form-highlight) !important;
+    --primary-color: var(--form-highlight) !important;
+    --focus-ring: 0 4px 3px -3px var(--strong-bg) !important;
+}
+
+.p-component.p-multiselect, .p-component.p-inputtext {
+    border: none;
+    border-bottom: 1px solid var(--text-subtle);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.p-component:enabled:focus, .p-focus {
+    box-shadow: none !important;
+}
+
+.p-button {
+    border: none !important;
+    border-radius: 1px;
+}
+
+.p-highlight {
+    background: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+.p-float-label input:focus ~ label, .p-float-label input.p-filled ~ label, .p-float-label textarea:focus ~ label, .p-float-label textarea.p-filled ~ label, .p-float-label .p-inputwrapper-focus ~ label, .p-float-label .p-inputwrapper-filled ~ label {
+    top: 0 !important;
+    translate: 0 -150%;
+    font-size: 0.8rem !important;
+    color: var(--text-color-secondary);
+}
+
+.p-float-label label {
+    top: 0 !important;
+    margin-top: 0 !important;
+    translate: 0 75%;
+    color: var(--text-color);
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+    border-color: transparent;
+    background-color: var(--text-color) !important;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight svg {
+    color: var(--primary-color) !important;
+    stroke: var(--primary-color);
+    stroke-width: 1px;
+}
+
+.p-multiselect-item.p-highlight {
+    background-color: var(--primary-color) !important;
+}
+
+.p-multiselect-token {
+    background-color: var(--primary-color) !important;
+    scale: 0.95;
+}
+
+/*# sourceMappingURL=primvue-overrides.css.map */

@@ -1,0 +1,19 @@
+{
+  "name": "script-manager",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "script cli for server management",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "registered globally, type script-manager in cmd line",
+  "license": "ISC",
+  "bin": {
+    "script-manager": "./bin/index.js"
+  },
+  "dependencies": {
+    "commander": "^10.0.0",
+    "fs": "^0.0.1-security"
+  }
+}

@@ -1,0 +1,170 @@
+
+:root {
+
+  --page-margin: 3rem;
+  --content-max-width: 1500px;
+  --section-top-padding: 4rem;
+  --section-bottom-padding: 3rem;
+  --text-less-subtle: rgba(0, 0, 0, 0.8);
+  --text-subtle: rgba(0, 0, 0, 0.5);
+  --text-more-subtle: rgba(0, 0, 0, 0.2);
+  --font-medium: 1.5rem;
+  --font-large: 2rem;
+  --font-larger: 3rem;
+  --font-largest: 4rem;
+  --font-normal: 1rem;
+  --font-small: 0.9rem;
+  --font-smaller: 0.8rem;
+  --page-top-margin: 3.4rem;
+
+  --header-offset: 7rem;
+
+  --soft-error: #ef9a9a;
+  --bg-color: #fff;
+  --error-color: #d92d2d;
+  --success-color: #50af07;
+  --fg-color: #000;
+  --form-highlight: #4484b2;
+  --navbar-bg: #fff;
+  --footer-bg: #fff;
+  --strong-bg: #149ee8;
+  --strong-fg: #fff;
+  --loading-bg: linear-gradient(343deg, rgba(100, 100, 100, 1) 0%, rgba(70, 70, 70, 1) 100%);
+  --soft-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2), 1px 1px 8px 2px rgba(0, 0, 0, 0.1);
+  --soft-shadow-right: 10px 0 6px -7px rgba(0, 0, 0, 0.2);
+
+  --text-success: var(--success-color);
+  --text-error: var(--error-color);
+
+  --color-soft-opacity: 0.6;
+  --feature-color: #5f9dd0;
+  --feature-color-gradient: linear-gradient(151deg, #2d71a2 12%, rgb(150, 67, 204) 89%);
+
+  --image-skeleton: linear-gradient(45deg, #444 20%, #666 120%);
+}
+
+@media screen and (max-width: 600px) {
+
+  :root {
+    --page-margin: 1.5rem;
+
+    --font-medium: 1.3rem;
+    --font-large: 1.6rem;
+    --font-larger: 2rem;
+    --font-largest: 3rem;
+    --font-normal: 1rem;
+    --font-small: 0.9rem;
+    --font-smaller: 0.8rem;
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+
+  :root {
+    --page-margin: 1.5rem;
+
+    --font-medium: 1rem;
+    --font-large: 1.2rem;
+    --font-larger: 1.5rem;
+    --font-largest: 2rem;
+    --font-normal: 0.8rem;
+    --font-small: 0.7rem;
+    --font-smaller: 0.6rem;
+  }
+
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.remove {
+  display: none;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+  color: var(--fg-color);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--bg-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-larger);
+}
+
+h2 {
+  font-size: var(--font-large);
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: var(--fg-color);
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+small {
+  font-size: var(--font-small);
+}
+
+.site-subtitle, .section-subtitle {
+  font-size: calc(var(--font-normal) + 0.2rem);
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-family: "Montserrat", sans-serif;
+  opacity: var(--color-soft-opacity);
+}
+
+.strong-button {
+  background-color: var(--strong-bg);
+  color: var(--strong-fg);
+  padding: 0.5rem 1.3rem;
+  text-align: center;
+  width: fit-content;
+  box-shadow: var(--soft-shadow);
+  border-radius: 2px;
+  font-size: calc(var(--font-medium) - 0.2rem);
+}
+
+//class is added to the top most section of every page
+.page-top-section {
+
+  .builder-section-heading {
+    padding: 2rem 0 3rem 0;
+    position: relative;
+    margin-top: -10px;
+
+    h2 {
+      position: relative;
+      font-size: calc(var(--font-large));
+      z-index: 1;
+      max-width: 22ch;
+    }
+  }
+}
