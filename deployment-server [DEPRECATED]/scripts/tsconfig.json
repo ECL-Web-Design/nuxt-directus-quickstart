@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "outFile": "dist/index.js",
+    "declaration": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@": [
+        "./src"
+      ],
+      "@/commands": [
+        "./src/"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    "./dist"
+  ]
+}
